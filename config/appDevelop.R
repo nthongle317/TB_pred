@@ -8,7 +8,7 @@ app = function(model, algorithm, valDT) {
 rownames(valDT)=valDT$Sample
 dt=valDT[,grep("cg", names(valDT))]
 
-CpG=read.table(paste0("/media/thong/sda/RCID/CoHoai/Tuberculosis/ShinyR/model/", model, ".txt"), header=T, sep="\t")$CpGs
+CpG=read.table(paste0("model/", model, ".txt"), header=T, sep="\t")$CpGs
 
 REQ=data.frame(Required=CpG)
 UI=data.frame(RequiredInput=names(dt), UserInput=names(dt))
@@ -23,7 +23,7 @@ print(check)
 
 select=paste0(model, "_", algorithm)
 
-rf.m1=readRDS(paste0("/media/thong/sda/RCID/CoHoai/Tuberculosis/ShinyR/model/", select, ".rds"))
+rf.m1=readRDS(paste0("model/", select, ".rds"))
 
 pre.m1s <- predict(rf.m1, dt, type="prob")
 
