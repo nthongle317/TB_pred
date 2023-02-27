@@ -1,6 +1,6 @@
 library(shiny)
 library(DT)
-source("/media/thong/sda/RCID/CoHoai/Tuberculosis/ShinyR/config/appDevelop.R")
+source("config/appDevelop.R")
 
 ui <- fluidPage(
   titlePanel("Research center for infectious disease - RCID"),
